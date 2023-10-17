@@ -4,16 +4,12 @@ def toto_media(x):
         sumas = sumas + i
     return sumas/len(x)
 
-########################
-
 def toto_mediana(x):
     x = sorted(x)
     if len(x) % 2 == 0:
         return (x[int(len(x)/2)] + x[int((len(x)/2)-1)])/2
     else:
         return x[int((len(x)/2))]
-    
-########################
 
 def toto_moda(x):
     elementos = []
@@ -30,12 +26,8 @@ def toto_moda(x):
             moda.append(j)
     return moda
 
-########################
-
 def toto_rango(x):
     return max(x) - min(x)
-
-########################
 
 def toto_var(x):
     sumas = 0
@@ -47,8 +39,6 @@ def toto_var(x):
         sumas2 = sumas2 + (j - media)**2
     return sumas2/len(x)
 
-########################
-
 def toto_std(x):
     sumas = 0
     for i in x:
@@ -59,13 +49,9 @@ def toto_std(x):
         sumas2 = sumas2 + (j - media)**2
     return np.sqrt(sumas2/len(x))
 
-########################
-
 def toto_percentiles(x,y):
     x = sorted(x)
     return x[int((y-1)*len(x)/100):int((y)*len(x)/100)]
-
-########################
 
 def toto_mad(x):
     x = sorted(x)
@@ -81,5 +67,3 @@ def toto_mad(x):
         return (desv[int(len(desv)/2)] + desv[int((len(desv)/2)-1)])/2
     else:
         return desv[int((len(desv)/2))]
-    
-########################
