@@ -51,7 +51,7 @@ def toto_std(x):
 
 def toto_percentiles(x,y):
     x = sorted(x)
-    return x[int((y-1)*len(x)/100):int((y)*len(x)/100)]
+    return int(y*len(x)/100)
 
 def toto_mad(x):
     x = sorted(x)
