@@ -49,10 +49,6 @@ def toto_std(x):
         sumas2 = sumas2 + (j - media)**2
     return np.sqrt(sumas2/len(x))
 
-def toto_percentiles(x,y):
-    x = sorted(x)
-    return int(y*len(x)/100)
-
 def toto_mad(x):
     x = sorted(x)
     if len(x) % 2 == 0:
@@ -67,3 +63,21 @@ def toto_mad(x):
         return (desv[int(len(desv)/2)] + desv[int((len(desv)/2)-1)])/2
     else:
         return desv[int((len(desv)/2))]
+
+def toto_percentiles(x,y):
+    x = sorted(x)
+    percentil = (y/100)*(len(x)-1)
+    ponderacion = percentil - int(percentil)
+    if ponderacion == 0:
+        return x[int(percentil)]
+    else:
+        return x[int(percentil)]*(1-ponderacion) + x[int(percentil)+1]*ponderacion
+
+def toto_cuartiles(x,y):
+    x = sorted(x)
+    cuartil = (y/4)*(len(x)-1)
+    ponderacion = cuartil - int(cuartil)
+    if ponderacion == 0:
+        return x[int(cuartil)]
+    else:
+        return x[int(cuartil)]*(1-ponderacion) + x[int(cuartil)+1]*ponderacion
