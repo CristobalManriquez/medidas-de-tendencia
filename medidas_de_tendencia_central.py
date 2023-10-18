@@ -81,3 +81,19 @@ def toto_cuartiles(x,y):
         return x[int(cuartil)]
     else:
         return x[int(cuartil)]*(1-ponderacion) + x[int(cuartil)+1]*ponderacion
+    
+def toto_IQR(x):
+    x = sorted(x)
+    Q1 = (1/4)*(len(x)-1)
+    P1 = Q1 - int(Q1)
+    Q3 = (3/4)*(len(x)-1)
+    P3 = Q3 - int(Q3)
+    if P1 == 0:
+        val_Q1 = x[int(Q1)]
+    else:
+        val_Q1 = x[int(Q1)]*(1-P1) + x[int(Q1)+1]*P1
+    if P3 == 0:
+        val_Q3 = x[int(Q3)]
+    else:
+        val_Q3 = x[int(Q3)]*(1-P3) + x[int(Q3)+1]*P3
+    return Q3-Q1
