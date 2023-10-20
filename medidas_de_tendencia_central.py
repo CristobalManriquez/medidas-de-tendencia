@@ -47,7 +47,7 @@ def toto_std(x):
     sumas2 = 0
     for j in x:
         sumas2 = sumas2 + (j - media)**2
-    return np.sqrt(sumas2/len(x))
+    return (sumas2/len(x))**(1/2)
 
 def toto_mad(x):
     x = sorted(x)
